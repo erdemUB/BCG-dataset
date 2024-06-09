@@ -1,19 +1,231 @@
-<html><head>
-    <title>Index of BCG datasets</title>
-   </head>
-   <body>
-  <h1>Index of BCG datasets</h1>
-    <table>
-     <tbody><tr><th valign="top"><img src="" alt=""></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
-     <tr><th colspan="5"><hr></th></tr>
-  <tr><td valign="top"><img src="./icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/CICDataset/MalDroid-2020/Dataset/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="Adware.tar.gz">GraphFiles.tar.gz</a></td><td align="right">2024-03-01 11:12  </td><td align="right">1.8G</td><td align="right"> Graph files with adjacent edge list </td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="Banking.tar.gz">DetailGraphFiles.tar.gz</a></td><td align="right">2024-03-01 11:13  </td><td align="right">3.6G</td><td align="right"> Graph files with actual method name </td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="Benign.tar.gz">APKFiles.tar.gz</a></td><td align="right">2024-03-04 09:19  </td><td align="right"> 48G</td><td align="right"> Original Malware APK files</td></tr>
-  <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="Riskware.tar.gz">APKFeatures.csv</a></td><td align="right">2024-03-01 11:18  </td><td align="right"> 16G</td><td  align="right"> All app-level features </td></tr>
-  <!-- <tr><td valign="top"><img src="./icons/tar.gif" alt="[   ]"></td><td><a href="SMS.tar.gz">SMS.tar.gz</a></td><td align="right">2024-03-01 11:18  </td><td align="right">1.2G</td><td>&nbsp;</td></tr> -->
-     <tr><th colspan="5"><hr></th></tr>
-  </tbody></table>
-  <!-- <address>Apache/2.4.41 (Ubuntu) Server at 205.174.165.80 Port 80</address> -->
-  
-  </body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Your Name</title> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+			padding-top: 56px;
+			overflow: auto;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1;
+        }
+        .bg-dark {
+            background-color: #343a40 !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Your Name</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#properties">DATA PROPERTIES</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#Download">DOWNLOAD</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container content">
+		<section id="about">
+            <h2>About Better Call Graphs (BCG)</h2>
+			<p>Malware detection is a key task in the field of cybersecurity. In most malware samples, minor changes in the source code of the 
+				original malware can lead to substantially different compiled code (e.g., through instruction reordering, branch inversion, 
+				and register allocation). This is often exploited to bypass signature-based detection, a common method of malware detection 
+				[24]. However, these minor source code modifications have little impact on the executable’s control flow, which can be depicted 
+				using a function call graph (FCG) where functions are the nodes and the call relations are the edges. 
+				Hence FCG-based malware detection has been an important field of study, particularly within the realm of Android.</p>
+            <div class="mb-4">
+                <!-- <h5>Background</h5> -->
+            <div class="mb-4">
+                <h5>Contribution</h5>
+				<p>In this paper, we introduce a new and comprehensive dataset named Better Call Graphs (BCG), comprising extensive and distinct 
+					function call graphs (FCGs) extracted from recent APKs. The dataset includes benign samples as well as malware samples spanning 
+					various types and families. We establish the necessity of BCG through the evaluation of several baseline approaches on existing
+					 datasets. We show that existing datasets often yield misleading scores when state-of-the-art classifiers are applied. Our 
+					 dataset also contains graph-level APK features, capturing both the structural and behavioral characteristics of malware. 
+					 BCG is publicly available at https://jakir-sust.github. io/BCG-dataset/. The dataset is released under a CC-BY license, 
+					enabling free sharing and adaptation for research or development purpose.</p>
+
+            </div>
+            <div class="mb-4">
+                <h5>Construction process of BCG</h5>
+				<p>To ensure a robust and relevant BCG dataset, we constructed it by comprehensively analyzing both APK files and their 
+					corresponding graph properties. This involved filtering and refining APKs based on various quality and relevance criteria, 
+					overcoming limitations of existing datasets. There are some high level observations that guided our approach: (1) old APKs 
+					are simplistic in their structure and capabilities, (2) repackaging is very common, (3) certain virus families are over 
+					represented in datasets (often related to point 2), and (4) small (based on bytecode size and not auxiliary files) APKs are
+					 often uninteresting from a detection standpoint. 
+					A detailed flowchart of the BCG construction process is provided in Figure 1.</p>
+            </div>
+			<p>	
+
+				<br><br>
+			</p>
+        </section>
+
+        <section id="properties">
+		<h2>Dataset Properties</h2>
+			<p> 
+				While existing datasets like MalNet [15] offer valuable properties for evaluating Android malware with FCGs, they often 
+				contain duplicate APKs with different names but identical FCG structures. Most of the previous datasets primarily consists 
+				of samples collected before 2017, potentially limiting its generalizability to modern malware, and hence misleads the ongoing 
+				research on malware detection. Additionally, existing malware datasets often include numerous smaller-sized APKs, which limits
+				 their utility in comprehensive malware analysis. Moreover, these datasets often lack essential APK properties, such as detailed
+				  information on the services or libraries used by the app, which impedes a thorough understanding of the app’s behavior and 
+				  functionality, making it difficult to accurately classify malware. To address these limitations, we ensured that BCG has 
+				  four key features: (1) larger size to facilitate more robust graph classification, (2) recent data (including 2017 and after) 
+				  to reflect evolving threats, (3) unique APKs to ensure a more accurate evaluation testbed, and (4) non-graph 
+				APK features (graph attributes) for a more holistic evaluation. 
+				 <br> <br>
+			</p>
+
+			
+			<style>
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  overflow:hidden;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  font-weight:normal;overflow:hidden;word-break:normal;}
+				.tg .tg-0thz{border-color:inherit;font-weight:bold;text-align:left;vertical-align:bottom}
+				.tg .tg-j6zm{font-weight:bold;text-align:left;vertical-align:bottom}
+				.tg .tg-7zrl{text-align:left;vertical-align:bottom}
+				.rotate {
+					transform: rotate(-90deg);
+					white-space: nowrap;
+				}
+				.small-text {
+					font-size: 10px;
+				}
+				.table-container {
+	            			display: flex;
+	            			justify-content: center;
+	        		}
+				caption {
+					caption-side: top;
+					text-align: center;
+					font-weight: bold;
+					margin-bottom: 10px;
+	        		}
+
+				p {
+					text-align: justify;
+				}
+			</style>
+			<div class="mb-4">
+                <h5>APK features</h5>
+				<p> We extracted two basic features from the APK and manifest files: APK size and DEX size. APK size refers to the entire APK
+					 file size in bytes, while DEX size represents the size of the Dalvik Executable (DEX) file also in bytes. The DEX file
+					  contains the optimized machine code used by the Android system to run the application. Beyond basic size information, 
+					  we utilize Androguard to extract various textual features from the APK, which have been shown to be useful for malware 
+					  classification in previous works [28, 19]. These textual features include the app/package name, permissions requested by 
+					  the app, all activities of the app, services or libraries used by the app, and the list of broadcast receivers. We encoded 
+					  all of the textual features using a 100-dimensional TensorFlow sentence encoder and further reduced its dimensionality to 
+					  2 using t-SNE
+					 for efficient processing. A detailed description of all non-graph APK features is provided in below table: </p>
+			</div>
+			<style type="text/css">
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  overflow:hidden;padding:10px 5px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+				.tg .tg-0thz{border-color:inherit;font-weight:bold;text-align:left;vertical-align:bottom}
+				.tg .tg-j6zm{font-weight:bold;text-align:left;vertical-align:bottom}
+				.tg .tg-7zrl{text-align:left;vertical-align:bottom}
+				</style>
+				<table class="tg"><thead>
+				  <tr>
+					<th class="tg-0thz"><span style="font-weight:bold">Feature</span></th>
+					<th class="tg-j6zm"><span style="font-weight:bold">Description</span></th>
+				  </tr></thead>
+				<tbody>
+				  <tr>
+					<td class="tg-7zrl">APK size</td>
+					<td class="tg-7zrl">The size of the APK file in bytes.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">Dex size</td>
+					<td class="tg-7zrl">The size of the Dex file in bytes.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">App name</td>
+					<td class="tg-7zrl">The application name of the APK.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">Package name</td>
+					<td class="tg-7zrl">The unique package name of the APK.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">App permission</td>
+					<td class="tg-7zrl">The list of permissions requested by the app, indicating the resources and data the app needs access to.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">App main activity</td>
+					<td class="tg-7zrl">The main activity of the app and&nbsp;&nbsp;entry point when users launch the app.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">App all activity</td>
+					<td class="tg-7zrl">The complete list of all activities defined in the app, representing the different screens and interactions available within the app.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">Services</td>
+					<td class="tg-7zrl">The list of all services used by the app, which are components that run in the background to perform long-running operations.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">Receivers</td>
+					<td class="tg-7zrl">The list of all broadcast receivers in the app, which are components that respond to system-wide broadcast announcements.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-7zrl">Libraries</td>
+					<td class="tg-7zrl">The list of all libraries used by the app, which can include third-party libraries that provide additional functionality and support.</td>
+				  </tr>
+				</tbody></table>
+			<p>	
+
+				<br><br>
+			</p>
+
+			
+	</section>
+        <section id="Download" style="margin-top: 20px;">
+			<div class="mb-5">
+				<h2>Download Now</h2>
+				43 GB of graph data. Please download the data from <a href="download_page.html"> here.</a>
+
+			</div>
+            
+        </section>
+    </div>
+
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <!-- <small>&copy; 2024 Your Name. All Rights Reserved.</small> -->
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
