@@ -1,0 +1,21 @@
+{
+    "name": "Metadata Information of actual FCG",
+    "description": "It contains information about each FCG of actual data (the information is same for the hashed FCG where the data type is integer)",
+    "general": "Lines beginning with # denote headers or provide information about the graph",
+    "license": "CC-BY",
+    "schema": {
+      "fields": [
+        {
+          "name": "FromNodeId",
+          "description": "The node id of source",
+          "dataType": "string"
+        },
+        {
+          "name": "ToNodeId",
+          "description": "The node id of the destination",
+          "dataType": "string"
+        }
+      ]
+    }
+  }
+  
