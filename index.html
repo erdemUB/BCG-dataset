@@ -33,13 +33,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">ABOUT</a>
+                        <a style="font-size:18px" class="nav-link" href="#about">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#properties">DATA PROPERTIES</a>
+                        <a style="font-size:18px" class="nav-link" href="#properties">DATA PROPERTIES</a>
                     </li>
 					<li class="nav-item">
-                        <a class="nav-link" href="#Download">DOWNLOAD</a>
+                        <a style="font-size:18px" class="nav-link" href="#Download">DOWNLOAD</a>
                     </li>
                 </ul>
             </div>
@@ -48,35 +48,31 @@
 
     <div class="container content">
 		<section id="about">
-            <h2>About Better Call Graphs (BCG)</h2>
-			<p>Malware detection is a key task in the field of cybersecurity. In most malware samples, minor changes in the source code of the 
-				original malware can lead to substantially different compiled code (e.g., through instruction reordering, branch inversion, 
-				and register allocation). This is often exploited to bypass signature-based detection, a common method of malware detection 
-				[24]. However, these minor source code modifications have little impact on the executable’s control flow, which can be depicted 
-				using a function call graph (FCG) where functions are the nodes and the call relations are the edges. 
-				Hence FCG-based malware detection has been an important field of study, particularly within the realm of Android.</p>
+            <h2>BCG: Better Call Graphs</h2>
+			<p style="font-size:18px">Malware detection is a critical aspect of cybersecurity, where even minor changes in source code can significantly alter 
+				compiled code. Function Call Graphs (FCGs) provide a robust representation
+				 of executable control flow, making them essential for malware detection, especially in the Android domain. In this work,
+				  we introduce Better Call Graphs (BCG), a comprehensive dataset featuring extensive FCGs extracted from recent APKs, 
+				  encompassing both benign and malware samples across diverse types and families. Moreover, BCG includes graph-level 
+				  APK features, capturing both structural and behavioral malware 
+				  characteristics.
+				 Released under a CC-BY license, BCG facilitates free sharing and adaptation for research and development purposes.</p>
             <div class="mb-4">
                 <!-- <h5>Background</h5> -->
             <div class="mb-4">
-                <h5>Contribution</h5>
-				<p>In this paper, we introduce a new and comprehensive dataset named Better Call Graphs (BCG), comprising extensive and distinct 
-					function call graphs (FCGs) extracted from recent APKs. The dataset includes benign samples as well as malware samples spanning 
-					various types and families. We establish the necessity of BCG through the evaluation of several baseline approaches on existing
-					 datasets. We show that existing datasets often yield misleading scores when state-of-the-art classifiers are applied. Our 
-					 dataset also contains graph-level APK features, capturing both the structural and behavioral characteristics of malware. 
-					 BCG is publicly available at https://jakir-sust.github. io/BCG-dataset/. The dataset is released under a CC-BY license, 
-					enabling free sharing and adaptation for research or development purpose.</p>
+                <!-- <h5>Contribution</h5> -->
+		
 
             </div>
             <div class="mb-4">
-                <h5>Construction process of BCG</h5>
-				<p>To ensure a robust and relevant BCG dataset, we constructed it by comprehensively analyzing both APK files and their 
+                <h5 style="font-size:24p">Construction process of BCG</h5>
+				<p style="font-size:18px">To ensure a robust and relevant BCG dataset, we constructed it by comprehensively analyzing both APK files and their 
 					corresponding graph properties. This involved filtering and refining APKs based on various quality and relevance criteria, 
 					overcoming limitations of existing datasets. There are some high level observations that guided our approach: (1) old APKs 
 					are simplistic in their structure and capabilities, (2) repackaging is very common, (3) certain virus families are over 
-					represented in datasets (often related to point 2), and (4) small (based on bytecode size and not auxiliary files) APKs are
+					represented in datasets and (4) small (based on bytecode size and not auxiliary files) APKs are
 					 often uninteresting from a detection standpoint. 
-					A detailed flowchart of the BCG construction process is provided in Figure 1.</p>
+					<!-- A detailed flowchart of the BCG construction process is provided in Figure 1.</p> -->
             </div>
 			<p>	
 
@@ -86,8 +82,8 @@
 
         <section id="properties">
 		<h2>Dataset Properties</h2>
-			<p> 
-				While existing datasets like MalNet [15] offer valuable properties for evaluating Android malware with FCGs, they often 
+			<p style="font-size:18px"> 
+				While existing datasets offer valuable properties for evaluating Android malware with FCGs, they often 
 				contain duplicate APKs with different names but identical FCG structures. Most of the previous datasets primarily consists 
 				of samples collected before 2017, potentially limiting its generalizability to modern malware, and hence misleads the ongoing 
 				research on malware detection. Additionally, existing malware datasets often include numerous smaller-sized APKs, which limits
@@ -133,22 +129,19 @@
 				}
 			</style>
 			<div class="mb-4">
-                <h5>APK features</h5>
-				<p> We extracted two basic features from the APK and manifest files: APK size and DEX size. APK size refers to the entire APK
-					 file size in bytes, while DEX size represents the size of the Dalvik Executable (DEX) file also in bytes. The DEX file
-					  contains the optimized machine code used by the Android system to run the application. Beyond basic size information, 
-					  we utilize Androguard to extract various textual features from the APK, which have been shown to be useful for malware 
-					  classification in previous works [28, 19]. These textual features include the app/package name, permissions requested by 
+                <h5 style="font-size:24p">APK features</h5>
+				<p style="font-size:18px"> We extracted two basic features from the APK and manifest files: APK size and DEX size. Beyond basic size information, 
+					  we utilize Androguard to extract various textual features from the APK. These textual features include the app/package name, permissions requested by 
 					  the app, all activities of the app, services or libraries used by the app, and the list of broadcast receivers. We encoded 
 					  all of the textual features using a 100-dimensional TensorFlow sentence encoder and further reduced its dimensionality to 
 					  2 using t-SNE
-					 for efficient processing. A detailed description of all non-graph APK features is provided in below table: </p>
+					 for efficient processing. A detailed description of all APK features is provided in below table: </p>
 			</div>
 			<style type="text/css">
 				.tg  {border-collapse:collapse;border-spacing:0;}
-				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;
 				  overflow:hidden;padding:10px 5px;word-break:normal;}
-				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:16px;
 				  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 				.tg .tg-0thz{border-color:inherit;font-weight:bold;text-align:left;vertical-align:bottom}
 				.tg .tg-j6zm{font-weight:bold;text-align:left;vertical-align:bottom}
@@ -210,8 +203,10 @@
 	</section>
         <section id="Download" style="margin-top: 20px;">
 			<div class="mb-5">
-				<h2>Download Now</h2>
-				43 GB of graph data. Please download the data from <a href="download_page.html"> here.</a>
+				<h2>Download</h2>
+				<p style="font-size:18px"> Our dataset contains 146 GB of APK data, 114 GB of actual FCG data, and
+					5.4 GB of hashed FCG data. Click <a href="download_page.html"> here</a> to download all the data.</p>
+				
 
 			</div>
             
