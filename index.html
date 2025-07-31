@@ -140,7 +140,7 @@
 				<p style="font-size:18px"> We extracted two basic features from the APK and manifest files: APK size and DEX size. Beyond basic size information, 
 					  we utilize Androguard to extract various textual features from the APK. These textual features include the app/package name, permissions requested by 
 					  the app, all activities of the app, services or libraries used by the app, and the list of broadcast receivers. We encoded 
-					  all of the textual features using a 100-dimensional TensorFlow sentence encoder and further reduced its dimensionality to 
+					  all of the textual features using a 512-dimensional TensorFlow sentence encoder and further reduced its dimensionality to 
 					  2 using t-SNE
 					 for efficient processing. A detailed description of all APK features is provided in below table: </p>
 			</div>
@@ -208,17 +208,24 @@
 
 			
 	</section>
-        <section id="Download" style="margin-top: 20px;">
-			<div class="mb-5">
-				<h2>Download</h2>
-				<p style="font-size:18px">Our original dataset comprises 146 GB of APK data, 114 GB of actual Function Call Graph (FCG) 
-					data, and 5.4 GB of hashed FCG data. Click <a href="download_page.html"> here</a> to download all the 
-					data (including metadata) separately.</p>
-				
-
-			</div>
-            
-        </section>
+	<section id="Download" style="margin-top: 20px;">
+		<div class="mb-5">
+			<h2>Download</h2>
+			<p style="font-size:18px">
+				Our original dataset includes the following components:
+			</p>
+			<ul style="font-size:18px; margin-left: 20px; line-height: 1.6;">
+				<li>159.8 GB of APK data</li>
+				<li>123.8 GB of actual Function Call Graph (FCG) data</li>
+				<li>6 GB of hashed FCG data</li>
+				<li>33.5 GB of mapping data between actual and hashed FCGs</li>
+			</ul>
+			<p style="font-size:18px">
+				Click <a href="download_page.html">here</a> to download all the data (including metadata) separately.
+			</p>
+		</div>
+	</section>
+	
     </div>
 
     <footer class="py-4 bg-dark text-white-50">
